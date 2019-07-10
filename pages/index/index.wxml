@@ -1,0 +1,43 @@
+<image class="image" src="{{ image }}" mode="aspectFill"></image>
+
+<view class="result" wx:if="{{ result }}" animation="{{animationMiddleHeaderItem}}">
+  <view class="item">
+    <text>性别：</text><text>{{ result.gender > 50 ? '♂' : '♀' }}</text>
+  </view>
+  <view class="item">
+    <text>年龄：</text><text>{{ result.age }}岁</text>
+  </view>
+  <view class="item">
+    <text>表情：</text>
+    <text wx:if="{{ result.expression < 10 }}">黯然伤神</text>
+    <text wx:elif="{{ result.expression < 20 }}">半嗔半喜</text>
+    <text wx:elif="{{ result.expression < 30 }}">似笑非笑</text>
+    <text wx:elif="{{ result.expression < 40 }}">笑逐颜开</text>
+    <text wx:elif="{{ result.expression < 50 }}">莞尔一笑</text>
+    <text wx:elif="{{ result.expression < 60 }}">喜上眉梢</text>
+    <text wx:elif="{{ result.expression < 70 }}">眉开眼笑</text>
+    <text wx:elif="{{ result.expression < 80 }}">笑尽妖娆</text>
+    <text wx:elif="{{ result.expression < 90 }}">心花怒放</text>
+    <text wx:else>一笑倾城</text>
+  </view>
+  <view class="item">
+    <text>颜值：</text>
+    <text wx:if="{{ result.beauty < 40 }}">差强人意 </text>
+    <text wx:elif="{{ result.beauty < 50 }}">眉清目秀 </text>
+    <text wx:elif="{{ result.beauty < 60 }}">闭月羞花 </text>
+    <text wx:elif="{{ result.beauty < 70 }}">出水芙蓉 </text>
+    <text wx:elif="{{ result.beauty < 80 }}">美如冠玉 </text>
+    <text wx:elif="{{ result.beauty < 90 }}">国色天香 </text>
+    <text wx:elif="{{ result.beauty >= 90}}">倾国倾城 </text>
+    <text>{{ result.beauty }}（0 - 100）</text>
+  </view>
+  <view wx:if="{{ result.glass }}">你好丫四眼仔~</view>
+</view>
+
+<view class="controls">
+  <view class="tips" wx:if="{{ showTips }}">短按拍照，长按选择照片</view>
+  <button class="button" hover-class="button-hover" bindtap="handleClick" bindlongpress="handleClick" animation="{{animationMiddleHeaderItem}}">
+    <view class="icon"></view>
+    <text>拍一拍</text>
+  </button>
+</view>
