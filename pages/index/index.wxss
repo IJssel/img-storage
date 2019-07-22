@@ -8,7 +8,7 @@
 
 .result {
   position: relative;
-  margin: 920rpx 50rpx 0;
+  margin: 720rpx 50rpx 0;
   padding: 50rpx;
   border-radius: 20rpx;
   background: rgba(255, 255, 255, 0.95);
